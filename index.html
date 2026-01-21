@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg,#ff4b7d,#ffb6c1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    animation: pulse 1.5s infinite alternate;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+.heart {
+    position: absolute;
+    font-size: 22px;
+    animation: floatUp 4s linear infinite;
+}
+
+@keyframes floatUp {
+    from { bottom: -10%; opacity: 1; }
+    to { bottom: 110%; opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday ❤️</h1>
+
+<script>
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000);
+}, 300);
+</script>
+
+</body>
+</html>
